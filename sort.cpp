@@ -111,19 +111,20 @@ void Hash_table::merge(int l, int m, int r)
     int n1 = m - l + 1; 
     int n2 = r - m; 
   
-    /* create temp arrays */
+    // create temp arrays 
     int L[n1], R[n2];
     string LS[n1], RS[n2]; 
   
-    /* Copy data to temp arrays L[] and R[] */
-    for (i = 0; i < n1; i++) 
+    // Copy data to temp arrays L[] and R[]
+    for (i = 0; i < n1; i++) { 
         L[i] =GRs [l + i];
-        LS[i] = Names[l + i]; 
-    for (j = 0; j < n2; j++) 
+        LS[i] = Names[l + i];
+    }
+    for (j = 0; j < n2; j++) {
         R[j] = GRs[m + 1 + j];
         RS[j] = Names[m + 1 + j];
-  
-    /* Merge the temp arrays back into arr[l..r]*/
+    }
+     
     i = 0; // Initial index of first subarray 
     j = 0; // Initial index of second subarray 
     k = l; // Initial index of merged subarray 
@@ -141,8 +142,7 @@ void Hash_table::merge(int l, int m, int r)
         k++; 
     } 
   
-    /* Copy the remaining elements of L[], if there 
-       are any */
+    // Copy the remaining elements of L[], if there are any 
     while (i < n1) { 
         GRs[k] = L[i];
         Names[k] = LS[i]; 
@@ -150,8 +150,7 @@ void Hash_table::merge(int l, int m, int r)
         k++; 
     } 
   
-    /* Copy the remaining elements of R[], if there 
-       are any */
+    // Copy the remaining elements of R[], if there are any 
     while (j < n2) { 
         GRs[k] = R[j];
         Names[k] = RS[j]; 
@@ -160,13 +159,10 @@ void Hash_table::merge(int l, int m, int r)
     } 
 } 
   
-/* l is for left index and r is right index of the 
-   sub-array of arr to be sorted */
+// l is for left index and r is right index of the sub-array of arr to be sorted 
 void Hash_table::sort_key(int l, int r) 
 { 
     if (l < r) { 
-        // Same as (l+r)/2, but avoids overflow for 
-        // large l and h 
         int m = l + (r - l) / 2; 
   
         // Sort first and second halves 
