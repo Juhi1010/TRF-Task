@@ -281,18 +281,4 @@ int main()
     
     return 0;
 
-    // int x,y;
-    // Hash_table h1;
-    // h1.insertKey(1191032,"Prapti");
-    // h1.insertKey(1191026,"Juhi");
-    // h1.insertKey(1191044,"Harshita");
-    // h1.SortNames(10);
-    // x=h1.searchKey(1191044);
-    // cout<<"Index :"<<x<<endl;
-    // h1.searchKey(119103433);
-    // h1.deleteKey(1191044);
-    // h1.searchKey(1191044);
-    // h1.modifyKey(1191032,"Aarya");
-    // h1.sort_key(0,9);
-    // h1.print_table();
 }
